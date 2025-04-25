@@ -24,3 +24,8 @@ body{
     text-align: center;
     justify-content: center;
 }
+
+#icones{
+    padding: 100px;
+    height: 100px;
+}
