@@ -6,8 +6,21 @@ body{
     color:white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: center;
+    margin: 350px;
 }
 
-.login{
-    border: 500px;
+#login{
+
+}
+
+.flex{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.button{
+    display: flex;
+    text-align: center;
+    justify-content: center;
 }
