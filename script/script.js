@@ -14,6 +14,7 @@ navButtons.forEach(btn => {
         alert(`Você clicou em: ${btn.textContent}`);
     });
 });
+<<<<<<< HEAD
 document.addEventListener('DOMContentLoaded', () => {
   
     const backButton = document.getElementById('back-button');
@@ -36,3 +37,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     
 });
+=======
+
+document.querySelectorAll("button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    alert(`Acessando: ${btn.textContent.trim()}`);
+  });
+});
+>>>>>>> f2aedfd73b581d7b1fd0ac6a7c6de6aae2a8d5b3

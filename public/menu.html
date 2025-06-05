@@ -1,27 +1,38 @@
-<html lang="en">
-
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../script/script.js">
-    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/menu.css">
 </head>
-
 <body>
-    <div>
-        <img src="../img/unnamed.png" alt="" width="420" height="250">
+  <div class="menu-container">
+    <div class="header">
+      <i class="fas fa-train"></i>
+      <h1>MENU</h1>
     </div>
-    <div>
-        <h1>MENU</h1>
-    </div>
-    <div class="borda">
-        <h2 style="border: 3px solid rgb(19, 55, 121); padding: 4px;">Dashbord</h2>
-        <h2 style="border: 3px solid rgb(255, 255, 255); padding: 4px;">Gestão de Rotas</h2>
-        <h2 style="border: 3px solid rgb(255, 255, 255); padding: 4px;">Relatórios e Análises</h2>
-        <h2 style="border: 3px solid rgb(255, 255, 255); padding: 4px;">Notificação 📩</h2>
-        <h2 style="border: 3px solid rgb(255, 255, 255); padding: 4px;">Monitoriamento de Manutenções</h2>
-    </div>
-</body>
 
+    <div class="menu-buttons">
+      <button>Dashboard</button>
+      <button><u>Gestão de Rotas</u></button>
+      <button><u>Relatórios e análises</u></button>
+      <button class="notificacao">
+        <u>Notificações</u>
+        <span class="dot"></span>
+        <i class="fas fa-bell"></i>
+      </button>
+      <button><u>Monitoramento de manutenções</u></button>
+    </div>
+
+    <div class="footer">
+      <i class="fas fa-arrow-left"></i>
+      <i class="fas fa-home"></i>
+      <i class="fas fa-arrow-right"></i>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>
