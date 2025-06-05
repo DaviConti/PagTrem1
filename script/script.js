@@ -14,3 +14,9 @@ navButtons.forEach(btn => {
         alert(`Você clicou em: ${btn.textContent}`);
     });
 });
+
+document.querySelectorAll("button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    alert(`Acessando: ${btn.textContent.trim()}`);
+  });
+});
