@@ -14,34 +14,3 @@ navButtons.forEach(btn => {
         alert(`Você clicou em: ${btn.textContent}`);
     });
 });
-<<<<<<< HEAD
-document.addEventListener('DOMContentLoaded', () => {
-  
-    const backButton = document.getElementById('back-button');
-    const homeButton = document.getElementById('home-button');
-
-
-    if (backButton) {
-        backButton.addEventListener('click', () => {
-            alert('Você clicou no botão Voltar!');
-         
-        });
-    }
-
-    if (homeButton) {
-        homeButton.addEventListener('click', () => {
-            alert('Você clicou no botão Home!');
-          
-        });
-    }
-
-    
-});
-=======
-
-document.querySelectorAll("button").forEach(btn => {
-  btn.addEventListener("click", () => {
-    alert(`Acessando: ${btn.textContent.trim()}`);
-  });
-});
->>>>>>> f2aedfd73b581d7b1fd0ac6a7c6de6aae2a8d5b3
