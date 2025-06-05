@@ -6,11 +6,22 @@
 }
 
 body {
+<<<<<<< HEAD
   height: 100vh;
   background-color: #001f4d;
   display: flex;
   justify-content: center;
   align-items: center;
+=======
+    background-color: #001233;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+>>>>>>> 470b6946abf0d4291c78341a891f8a60011f9597
 }
 
 .menu-container {
@@ -42,6 +53,7 @@ h1 {
 >>>>>>> c017a13eb8ea67ef207a66e4cc7ea8ebf8575362
 }
 
+<<<<<<< HEAD
 .menu-buttons {
   display: flex;
   flex-direction: column;
@@ -84,4 +96,8 @@ h1 {
   width: 100%;
   padding: 0 40px;
   font-size: 20px;
+=======
+h1:hover {
+    color: #ffffff;
+>>>>>>> 470b6946abf0d4291c78341a891f8a60011f9597
 }
