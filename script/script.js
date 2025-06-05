@@ -1,7 +1,16 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const titulo = document.querySelector('h1');
+const dots = document.querySelectorAll('.dot');
 
-    titulo.addEventListener('click', function() {
-        alert('Iniciando o cadastro...');
+dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        dots.forEach(d => d.classList.remove('active'));
+        dot.classList.add('active');
+    });
+});
+
+const navButtons = document.querySelectorAll('.nav-btn');
+
+navButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        alert(`Você clicou em: ${btn.textContent}`);
     });
 });
