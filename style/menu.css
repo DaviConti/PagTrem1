@@ -1,5 +1,5 @@
 body {
-    background-color: #102336;
+    background-color: #001233;
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
@@ -27,5 +27,5 @@ h1 {
 }
 
 h1:hover {
-    color: #0077cc;
+    color: #ffffff;
 }
