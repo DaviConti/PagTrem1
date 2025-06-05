@@ -29,9 +29,17 @@ body {
   font-size: 24px;
 }
 
+<<<<<<< HEAD
 .header h1 {
   font-size: 20px;
   margin-top: 4px;
+=======
+h1 {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+>>>>>>> c017a13eb8ea67ef207a66e4cc7ea8ebf8575362
 }
 
 .menu-buttons {
