@@ -1,35 +1,36 @@
-<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Erro de E-mail</title>
-  <link rel="stylesheet" href="../style/e-mail.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-mail Não Encontrado</title>
+    <link rel="stylesheet" href="error_email_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <div class="app-container">
+        <div class="header">
+            <div class="icon-left">
+                <i class="fas fa-train"></i> </div>
+            </div>
 
-  <div class="container">
-    <div class="top-icon">
-      <img src="../img/icone.png" alt="Icone Trem">
+        <div class="content-container">
+            <div class="icon-group">
+                <i class="fas fa-envelope"></i> <i class="fas fa-times-circle error-icon"></i> </div>
+            <p class="error-message">
+                E-mail não encontrada, <br>verifique se preencheu <br>os dados corretamente.
+            </p>
+        </div>
+
+        <div class="navbar">
+            <div class="nav-icon" id="nav-back">
+                <i class="fas fa-arrow-left"></i> </div>
+            <div class="nav-icon active" id="nav-home">
+                <i class="fas fa-home"></i> </div>
+            <div class="nav-icon" id="nav-forward">
+                <i class="fas fa-arrow-right"></i> </div>
+        </div>
     </div>
 
-    <div class="message-area">
-      <div class="icons">
-        <img src="icone-email.png" alt="Email" class="email-icon">
-        <img src="icone-erro.png" alt="Erro" class="error-icon">
-      </div>
-      <p class="error-message">
-        E-mail não encontrada, <br> verifique se preencheu <br> os dados corretamente.
-      </p>
-    </div>
-
-    <div class="bottom-nav">
-      <button class="nav-btn">&#8592;</button>
-      <button class="nav-btn">&#8962;</button>
-      <button class="nav-btn">&#8594;</button>
-    </div>
-  </div>
-
-<script src="script.js"></script>
+    <script src="error_email_script.js"></script>
 </body>
 </html>
