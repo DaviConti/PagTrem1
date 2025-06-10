@@ -3,50 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../script/script.js">
-    <link rel="stylesheet" href="../style/menu.css">
+    <title>Menu Principal</title>
+    <link rel="stylesheet" href="menu_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <div class="menu-container">
-    <div class="header">
-      <i class="fas fa-train"></i>
-      <h1>MENU</h1>
-    </div>
-<<<<<<< HEAD
-    <div>
-        <h1>MENU</h1>
-    </div>
-    <div class="borda">
-        <h2 style="border: 3px solid rgb(255, 255, 255); padding: 4px;">Dashbord</h2>
-        <h2 style="border: 3px solid rgb(255, 255, 255); padding: 4px;">Gestão de Rotas</h2>
-        <h2 style="border: 3px solid rgb(255, 255, 255); padding: 4px;">Relatórios e Análises</h2>
-        <h2 style="border: 3px solid rgb(255, 255, 255); padding: 4px;">Notificação 📩</h2>
-        <h2 style="border: 3px solid rgb(255, 255, 255); padding: 4px;">Monitoriamento de Manutenções</h2>
-    </div>
-</body>
-=======
->>>>>>> 8bdc12cc0d56b479c0d7399e65a3558f33e40848
+    <div class="app-container">
+        <div class="header">
+            <div class="icon-left">
+                <i class="fas fa-train"></i> </div>
+            <div class="header-title">MENU</div>
+        </div>
 
-    <div class="menu-buttons">
-      <button>Dashboard</button>
-      <button><u>Gestão de Rotas</u></button>
-      <button><u>Relatórios e análises</u></button>
-      <button class="notificacao">
-        <u>Notificações</u>
-        <span class="dot"></span>
-        <i class="fas fa-bell"></i>
-      </button>
-      <button><u>Monitoramento de manutenções</u></button>
+        <div class="menu-items-container">
+            <a href="dashboard.html" class="menu-item">
+                Dashboard
+            </a>
+            <a href="gestao_rotas.html" class="menu-item">
+                Gestão de Rotas
+            </a>
+            <a href="relatorios_analises.html" class="menu-item">
+                Relatórios e análises
+            </a>
+            <a href="notificacoes.html" class="menu-item notification-item">
+                Notificações
+                <span class="badge"></span> </a>
+            <a href="monitoramento_manutencoes.html" class="menu-item">
+                Monitoramento de manutenções
+            </a>
+        </div>
+
+        <div class="navbar">
+            <div class="nav-icon" id="nav-back">
+                <i class="fas fa-arrow-left"></i> </div>
+            <div class="nav-icon active" id="nav-home">
+                <i class="fas fa-home"></i> </div>
+            <div class="nav-icon" id="nav-forward">
+                <i class="fas fa-arrow-right"></i> </div>
+        </div>
     </div>
 
-    <div class="footer">
-      <i class="fas fa-arrow-left"></i>
-      <i class="fas fa-home"></i>
-      <i class="fas fa-arrow-right"></i>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
+    <script src="menu_script.js"></script>
 </body>
 </html>
