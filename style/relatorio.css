@@ -1,32 +1,31 @@
-/* Estilos Gerais (para telas maiores, como desktop, mas com flexibilidade) */
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte mais moderna */
-    background-color: #000040; /* Azul escuro */
-    color: white; /* Texto branco */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background-color: #000040; 
+    color: white; 
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ocupa a altura total da viewport */
-    align-items: center; /* Centraliza o conteúdo horizontalmente */
-    justify-content: center; /* Centraliza o conteúdo verticalmente */
+    min-height: 100vh; 
+    align-items: center; 
+    justify-content: center; 
 }
 
-/* Container principal para simular o "celular" */
 .phone-mockup {
-    background-color: black; /* Borda preta do celular */
-    width: 375px; /* Largura comum de um celular (ex: iPhone X/XS) */
-    height: 812px; /* Altura comum de um celular */
-    border-radius: 40px; /* Cantos arredondados do celular */
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidade */
-    overflow: hidden; /* Garante que o conteúdo não vaze */
+    background-color: black; 
+    width: 375px; 
+    height: 812px; 
+    border-radius: 40px; 
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); 
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    position: relative; /* Para posicionar elementos internos como o "notch" */
-    border: 10px solid #222; /* Borda interna para a tela */
+    position: relative; 
+    border: 10px solid #222; 
 }
 
-/* O "notch" do celular (opcional, para mais realismo) */
+
 .phone-mockup::before {
     content: '';
     position: absolute;
@@ -42,102 +41,97 @@ body {
 }
 
 
-/* Conteúdo da tela do celular */
+
 .phone-screen-content {
-    flex-grow: 1; /* Ocupa o espaço restante dentro do mockup */
-    background-color: #000040; /* Fundo do app, igual ao original */
+    flex-grow: 1; 
+    background-color: #000040;
     display: flex;
     flex-direction: column;
-    padding-top: 30px; /* Espaço para o "notch" */
+    padding-top: 30px; 
 }
 
 
-/* Estilos para o cabeçalho/título */
+
 .header {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px 0;
-    font-size: 1.6em; /* Tamanho da fonte do título */
+    font-size: 1.6em; 
     font-weight: bold;
     text-align: center;
 }
 
 .header .train-icon {
-    font-size: 1.2em; /* Tamanho do ícone do trem */
-    margin-right: 10px; /* Espaço entre o ícone e o texto */
+    font-size: 1.2em;
+    margin-right: 10px; 
 }
 
-/* Container para os cards de relatórios */
+
 .reports-container {
     flex-grow: 1;
-    padding: 15px; /* Padding interno do container */
+    padding: 15px; 
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Espaço entre os cards */
-    overflow-y: auto; /* Permite scroll se o conteúdo for maior que a tela */
-    -webkit-overflow-scrolling: touch; /* Suaviza o scroll em iOS */
+    gap: 15px; 
+    overflow-y: auto; 
+    -webkit-overflow-scrolling: touch; 
 }
 
-/* Estilo para os cards individuais */
+
 .report-card {
     background-color: white;
-    color: #000040; /* Texto azul escuro dentro dos cards */
+    color: #000040; 
     padding: 18px;
-    border-radius: 18px; /* Cantos mais arredondados */
+    border-radius: 18px; 
     text-align: center;
     font-size: 1em;
     line-height: 1.4;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15); /* Sombra mais suave */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15); 
 }
 
-/* Estilo da barra de navegação inferior */
+
 .navigation-bar {
-    background-color: #000040; /* Mesmo azul escuro */
+    background-color: #000040; 
     padding: 15px 0;
     display: flex;
-    justify-content: space-around; /* Espaço igual entre os ícones */
+    justify-content: space-around; 
     align-items: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Separador sutil */
-    height: 60px; /* Altura fixa da barra */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); 
+    height: 60px; 
 }
 
 .navigation-icon {
-    font-size: 2.2em; /* Tamanho maior para os ícones */
+    font-size: 2.2em; 
     color: white;
-    cursor: pointer; /* Indica que são clicáveis */
-    transition: color 0.2s ease-in-out; /* Transição suave ao passar o mouse */
+    cursor: pointer; 
+    transition: color 0.2s ease-in-out; 
 }
 
 .navigation-icon:hover {
-    color: #ADD8E6; /* Um azul mais claro ao passar o mouse */
+    color: #ADD8E6; 
 }
 
-/*
-    MEDIA QUERIES:
-    Essas regras aplicarão estilos SOMENTE quando a largura da tela
-    for no máximo 768px (típico de tablets e celulares)
-*/
+
 @media (max-width: 768px) {
-    /* Em telas menores, removemos o mockup e deixamos o corpo preencher a tela */
     body {
-        justify-content: flex-start; /* Alinha o conteúdo ao topo */
+        justify-content: flex-start; 
     }
 
     .phone-mockup {
         width: 100%;
-        height: 100vh; /* Ocupa a altura total da viewport */
-        border-radius: 0; /* Remove os cantos arredondados */
-        box-shadow: none; /* Remove a sombra */
-        border: none; /* Remove a borda */
+        height: 100vh; 
+        border-radius: 0; 
+        box-shadow: none; 
+        border: none; 
     }
 
     .phone-mockup::before {
-        display: none; /* Esconde o notch em telas pequenas que não são o mockup */
+        display: none;
     }
 
     .phone-screen-content {
-        padding-top: 0; /* Remove o padding extra que era para o notch */
+        padding-top: 0;
     }
 
     .header {
