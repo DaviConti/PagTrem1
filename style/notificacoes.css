@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #0d1a2f; /* Dark blue background */
+    background-color: #0d1a2f; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,8 +11,8 @@ body {
 
 .notification-container {
     width: 100%;
-    max-width: 400px; /* Typical phone screen width */
-    height: 80vh; /* Adjust as needed */
+    max-width: 400px; 
+    height: 80vh; 
     background-color: #0d1a2f;
     display: flex;
     flex-direction: column;
@@ -49,8 +49,8 @@ body {
     flex-grow: 1;
     padding: 20px;
     display: flex;
-    justify-content: center; /* Center the card horizontally */
-    align-items: flex-start; /* Align card to the top */
+    justify-content: center; 
+    align-items: flex-start; 
     overflow-y: auto;
 }
 
@@ -60,16 +60,16 @@ body {
     padding: 25px;
     border-radius: 15px;
     text-align: center;
-    max-width: 90%; /* Adjust width as needed */
+    max-width: 90%; 
     line-height: 1.5;
     font-size: 16px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     position: relative;
-    margin-top: 20px; /* Space from the header */
+    margin-top: 20px; 
 }
 
 .notification-card p {
-    margin: 0 0 15px 0; /* Space below paragraphs */
+    margin: 0 0 15px 0; 
 }
 
 .notification-card p:last-of-type {
@@ -86,9 +86,9 @@ body {
     height: 0;
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
-    border-bottom: 15px solid #000; /* Black arrow for contrast */
+    border-bottom: 15px solid #000; 
     position: absolute;
-    bottom: 50px; /* Position it above the text */
+    bottom: 50px; 
     left: 50%;
     transform: translateX(-50%);
 }
@@ -96,7 +96,7 @@ body {
 
 .important-communication {
     font-weight: bold;
-    margin-top: 25px; /* Space above this line */
+    margin-top: 25px; 
 }
 
 .notification-footer {
