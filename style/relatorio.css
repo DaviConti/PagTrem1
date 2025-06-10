@@ -1,0 +1,168 @@
+/* Estilos Gerais (para telas maiores, como desktop, mas com flexibilidade) */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte mais moderna */
+    background-color: #000040; /* Azul escuro */
+    color: white; /* Texto branco */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ocupa a altura total da viewport */
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+    justify-content: center; /* Centraliza o conteúdo verticalmente */
+}
+
+/* Container principal para simular o "celular" */
+.phone-mockup {
+    background-color: black; /* Borda preta do celular */
+    width: 375px; /* Largura comum de um celular (ex: iPhone X/XS) */
+    height: 812px; /* Altura comum de um celular */
+    border-radius: 40px; /* Cantos arredondados do celular */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidade */
+    overflow: hidden; /* Garante que o conteúdo não vaze */
+    display: flex;
+    flex-direction: column;
+    position: relative; /* Para posicionar elementos internos como o "notch" */
+    border: 10px solid #222; /* Borda interna para a tela */
+}
+
+/* O "notch" do celular (opcional, para mais realismo) */
+.phone-mockup::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 25px;
+    background-color: black;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    z-index: 10;
+}
+
+
+/* Conteúdo da tela do celular */
+.phone-screen-content {
+    flex-grow: 1; /* Ocupa o espaço restante dentro do mockup */
+    background-color: #000040; /* Fundo do app, igual ao original */
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px; /* Espaço para o "notch" */
+}
+
+
+/* Estilos para o cabeçalho/título */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    font-size: 1.6em; /* Tamanho da fonte do título */
+    font-weight: bold;
+    text-align: center;
+}
+
+.header .train-icon {
+    font-size: 1.2em; /* Tamanho do ícone do trem */
+    margin-right: 10px; /* Espaço entre o ícone e o texto */
+}
+
+/* Container para os cards de relatórios */
+.reports-container {
+    flex-grow: 1;
+    padding: 15px; /* Padding interno do container */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaço entre os cards */
+    overflow-y: auto; /* Permite scroll se o conteúdo for maior que a tela */
+    -webkit-overflow-scrolling: touch; /* Suaviza o scroll em iOS */
+}
+
+/* Estilo para os cards individuais */
+.report-card {
+    background-color: white;
+    color: #000040; /* Texto azul escuro dentro dos cards */
+    padding: 18px;
+    border-radius: 18px; /* Cantos mais arredondados */
+    text-align: center;
+    font-size: 1em;
+    line-height: 1.4;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15); /* Sombra mais suave */
+}
+
+/* Estilo da barra de navegação inferior */
+.navigation-bar {
+    background-color: #000040; /* Mesmo azul escuro */
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-around; /* Espaço igual entre os ícones */
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Separador sutil */
+    height: 60px; /* Altura fixa da barra */
+}
+
+.navigation-icon {
+    font-size: 2.2em; /* Tamanho maior para os ícones */
+    color: white;
+    cursor: pointer; /* Indica que são clicáveis */
+    transition: color 0.2s ease-in-out; /* Transição suave ao passar o mouse */
+}
+
+.navigation-icon:hover {
+    color: #ADD8E6; /* Um azul mais claro ao passar o mouse */
+}
+
+/*
+    MEDIA QUERIES:
+    Essas regras aplicarão estilos SOMENTE quando a largura da tela
+    for no máximo 768px (típico de tablets e celulares)
+*/
+@media (max-width: 768px) {
+    /* Em telas menores, removemos o mockup e deixamos o corpo preencher a tela */
+    body {
+        justify-content: flex-start; /* Alinha o conteúdo ao topo */
+    }
+
+    .phone-mockup {
+        width: 100%;
+        height: 100vh; /* Ocupa a altura total da viewport */
+        border-radius: 0; /* Remove os cantos arredondados */
+        box-shadow: none; /* Remove a sombra */
+        border: none; /* Remove a borda */
+    }
+
+    .phone-mockup::before {
+        display: none; /* Esconde o notch em telas pequenas que não são o mockup */
+    }
+
+    .phone-screen-content {
+        padding-top: 0; /* Remove o padding extra que era para o notch */
+    }
+
+    .header {
+        font-size: 1.5em;
+        padding: 15px 0;
+    }
+
+    .reports-container {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .report-card {
+        padding: 15px;
+        border-radius: 15px;
+        font-size: 0.95em;
+    }
+
+    .navigation-bar {
+        height: 55px;
+        padding: 10px 0;
+    }
+
+    .navigation-icon {
+        font-size: 2em;
+    }
+}
+
