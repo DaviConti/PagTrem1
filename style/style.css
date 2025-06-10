@@ -1,0 +1,31 @@
+.logo{
+    
+}
+body{
+    background-color:#00122c;
+    color:white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin: 350px;
+}
+
+#login{
+
+}
+
+.flex{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.button{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+#icones{
+    padding: 100px;
+    height: 100px;
+}
