@@ -1,18 +1,35 @@
-<html lang="en">
-
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../style/style.css">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Erro de E-mail</title>
+  <link rel="stylesheet" href="../style/e-mail.css">
 </head>
-
 <body>
-    <div id="icones">
-        ✉ ❌
-        <h1>E-mail não encontrada, verifique se preencheu os dados corretamente.</h1>
-    </div>
-</body>
 
+  <div class="container">
+    <div class="top-icon">
+      <img src="icone-trem.png" alt="Icone Trem">
+    </div>
+
+    <div class="message-area">
+      <div class="icons">
+        <img src="icone-email.png" alt="Email" class="email-icon">
+        <img src="icone-erro.png" alt="Erro" class="error-icon">
+      </div>
+      <p class="error-message">
+        E-mail não encontrada, <br> verifique se preencheu <br> os dados corretamente.
+      </p>
+    </div>
+
+    <div class="bottom-nav">
+      <button class="nav-btn">&#8592;</button>
+      <button class="nav-btn">&#8962;</button>
+      <button class="nav-btn">&#8594;</button>
+    </div>
+  </div>
+
+<script src="script.js"></script>
+</body>
 </html>
