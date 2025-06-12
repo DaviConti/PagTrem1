@@ -53,3 +53,42 @@ document.addEventListener("DOMContentLoaded", () => {
   if (backBtn) backBtn.onclick = () => history.back();
   if (forwardBtn) forwardBtn.onclick = () => history.forward();
 });
+function irParaTela2() {
+  const nome = document.getElementById('nome').value.trim();
+  const nascimento = document.getElementById('nascimento').value;
+
+  if (nome === "" || nascimento === "") {
+    alert("Por favor, preencha todos os campos.");
+    return;
+  }
+
+  document.getElementById('tela1').classList.add('hidden');
+  document.getElementById('tela2').classList.remove('hidden');
+}
+
+function enviarCadastro() {
+  const email = document.getElementById('email').value.trim();
+  const senha = document.getElementById('senha').value;
+
+  if (email === "" || senha === "") {
+    alert("Por favor, preencha todos os campos.");
+    return;
+  }
+
+ 
+  alert("Cadastro concluído com sucesso!");
+}
+function validarLogin() {
+  const usuario = document.getElementById("usuario").value.trim();
+  const senha = document.getElementById("senha").value.trim();
+  const mensagemErro = document.getElementById("mensagemErro");
+
+  mensagemErro.textContent = "";
+
+
+  if (usuario === "admin" && senha === "1234") {
+    window.location.href = "menu.html"; 
+  } else {
+    mensagemErro.textContent = "Usuário ou senha inválidos.";
+  }
+}

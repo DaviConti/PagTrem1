@@ -1,28 +1,27 @@
-<html lang="en">
-
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style/login.css">
-    <link rel="stylesheet" href="../script/script.js">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <link rel="stylesheet" href="../style/login.css" />
 </head>
 
 <body>
-    <div id="login">
-        <label for="fname">Login</label><br>
-        <input type="text" id="fname" name="fname"><br>
-        <label for="fname">Primeiro nome:</label><br>
-        <input type="text" id="fname" name="fname"><br>
-    </div>
-    <div class="flex">
-        <h3>Esqueceu sua senha</h3>
-    </div>
-    <div class="button">
-        <p>lembrar senha</p>
-        <input type="checkbox" id="cleck">
-        <label for="cleck" class="button"></label>
-    </div>
+  <div id="login">
+    <h2>Login</h2>
+
+    <label for="usuario">Usuário:</label><br>
+    <input type="text" id="usuario" name="usuario" required><br>
+
+    <label for="senha">Senha:</label><br>
+    <input type="password" id="senha" name="senha" required><br><br>
+
+    <button onclick="validarLogin()">Entrar</button>
+    <div id="mensagemErro" style="color: red; margin-top: 10px;"></div>
+  </div>
+
+  <script src="../script/script.js"></script>
 </body>
 
 </html>
