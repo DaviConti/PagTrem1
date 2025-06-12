@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 73fa27cd2876fa601ff116651029edf27b3fb339
 function proximaEtapa() {
   const nome = document.getElementById("nome").value.trim();
   const nascimento = document.getElementById("nascimento").value.trim();
@@ -11,7 +14,10 @@ function proximaEtapa() {
   }
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 73fa27cd2876fa601ff116651029edf27b3fb339
 function validarFormulario() {
   const nome = document.getElementById("nome").value.trim();
   const nascimento = document.getElementById("nascimento").value.trim();
@@ -26,24 +32,36 @@ function validarFormulario() {
   }
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 73fa27cd2876fa601ff116651029edf27b3fb339
 function irParaCadastro4() {
   window.location.href = "cadastro4.html";
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 73fa27cd2876fa601ff116651029edf27b3fb339
 function irParaEmail() {
   window.location.href = "email.html";
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 73fa27cd2876fa601ff116651029edf27b3fb339
 function redirecionarParaDashboard() {
   setTimeout(() => {
     window.location.href = "dashboard.html";
   }, 2000);
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 73fa27cd2876fa601ff116651029edf27b3fb339
 document.addEventListener("DOMContentLoaded", () => {
   const homeBtn = document.getElementById("nav-home");
   const backBtn = document.getElementById("nav-back");
