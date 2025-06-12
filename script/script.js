@@ -1,4 +1,3 @@
-// CADASTRO1 - Valida nome e nascimento, vai para cadastro2
 function proximaEtapa() {
   const nome = document.getElementById("nome").value.trim();
   const nascimento = document.getElementById("nascimento").value.trim();
@@ -11,7 +10,6 @@ function proximaEtapa() {
   }
 }
 
-// CADASTRO2 - Valida novamente e vai para cadastro3
 function validarFormulario() {
   const nome = document.getElementById("nome").value.trim();
   const nascimento = document.getElementById("nascimento").value.trim();
@@ -22,28 +20,24 @@ function validarFormulario() {
     return false;
   } else {
     window.location.href = "cadastro3.html";
-    return false; // para impedir envio real do formulário
+    return false; 
   }
 }
 
-// CADASTRO3 - Clique em qualquer lugar vai para cadastro4
 function irParaCadastro4() {
   window.location.href = "cadastro4.html";
 }
 
-// CADASTRO4 - Clique em qualquer lugar vai para email.html
 function irParaEmail() {
   window.location.href = "email.html";
 }
 
-// EMAIL ENCONTRADO - Vai para dashboard depois de 2s
 function redirecionarParaDashboard() {
   setTimeout(() => {
     window.location.href = "dashboard.html";
   }, 2000);
 }
 
-// E-MAIL NÃO ENCONTRADO - ícones navegam
 document.addEventListener("DOMContentLoaded", () => {
   const homeBtn = document.getElementById("nav-home");
   const backBtn = document.getElementById("nav-back");
