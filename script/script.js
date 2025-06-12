@@ -1,164 +1,55 @@
-const dots = document.querySelectorAll('.dot');
-
-dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-        dots.forEach(d => d.classList.remove('active'));
-        dot.classList.add('active');
-    });
-});
-
-const navButtons = document.querySelectorAll('.nav-btn');
-
-navButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-        alert(`Você clicou em: ${btn.textContent}`);
-    });
-});
-function validarFormulario() {
-  const email = document.getElementById("email").value.trim();
-  const senha = document.getElementById("senha").value.trim();
-  const mensagemErro = document.getElementById("mensagemErro");
-  mensagemErro.innerText = "";
-
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-  if (!emailRegex.test(email)) {
-    mensagemErro.innerText = "Por favor, insira um e-mail válido.";
-    return false;
-  }
-
-  if (senha.length < 6) {
-    mensagemErro.innerText = "A senha deve conter pelo menos 6 caracteres.";
-    return false;
-  }
-
-  alert("Cadastro realizado com sucesso!");
-  return true;
-}
-function validarFormulario() {
-  const email = document.getElementById("email").value.trim();
-  const senha = document.getElementById("senha").value.trim();
-  const mensagemErro = document.getElementById("mensagemErro");
-  mensagemErro.innerText = "";
-
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const senhaRegex = /^(?=.*[a-zA-Z])(?=.*\d).{8,}$/;
-
-  if (!emailRegex.test(email)) {
-    mensagemErro.innerText = "Por favor, insira um e-mail válido.";
-    return false;
-  }
-
-  if (!senhaRegex.test(senha)) {
-    mensagemErro.innerText =
-      "A senha deve ter pelo menos 8 caracteres, incluindo letras e números.";
-    return false;
-  }
-
-  alert("Cadastro realizado com sucesso!");
-  return true;
-}
-function validarFormulario() {
-  const nome = document.getElementById("nome").value.trim();
-  const nascimento = document.getElementById("nascimento").value.trim();
-  const mensagemErro = document.getElementById("mensagemErro");
-
-  mensagemErro.innerText = "";
-
-  
-  if (nome.length < 3) {
-    mensagemErro.innerText = "O nome deve ter pelo menos 3 caracteres.";
-    return false;
-  }
-
-  
-  const regexData = /^(\d{2})\/(\d{2})\/(\d{4})$/;
-  const match = nascimento.match(regexData);
-  if (!match) {
-    mensagemErro.innerText = "A data deve estar no formato dd/mm/aaaa.";
-    return false;
-  }
-
-  const dia = parseInt(match[1]);
-  const mes = parseInt(match[2]) - 1; 
-  const ano = parseInt(match[3]);
-
-  const dataNasc = new Date(ano, mes, dia);
-  const hoje = new Date();
-  const idade = hoje.getFullYear() - dataNasc.getFullYear();
-  const mesDif = hoje.getMonth() - mes;
-
-  if (
-    idade < 13 ||
-    (idade === 13 && mesDif < 0) ||
-    (idade === 13 && mesDif === 0 && hoje.getDate() < dia)
-  ) {
-    mensagemErro.innerText = "Você precisa ter pelo menos 13 anos.";
-    return false;
-  }
-
-  alert("Cadastro válido!");
-  return true;
-}
+// CADASTRO1 - Valida nome e nascimento, vai para cadastro2
 function proximaEtapa() {
   const nome = document.getElementById("nome").value.trim();
   const nascimento = document.getElementById("nascimento").value.trim();
   const erro1 = document.getElementById("erro1");
-  erro1.innerText = "";
 
-  if (nome.length < 3) {
-    erro1.innerText = "Nome deve ter pelo menos 3 caracteres.";
-    return;
+  if (!nome || !nascimento) {
+    erro1.textContent = "Preencha todos os campos.";
+  } else {
+    window.location.href = "cadastro2.html";
   }
-
-  const dataRegex = /^(\d{2})\/(\d{2})\/(\d{4})$/;
-  const match = nascimento.match(dataRegex);
-
-  if (!match) {
-    erro1.innerText = "Formato de data inválido. Use dd/mm/aaaa.";
-    return;
-  }
-
-  const dia = parseInt(match[1]);
-  const mes = parseInt(match[2]) - 1;
-  const ano = parseInt(match[3]);
-
-  const dataNasc = new Date(ano, mes, dia);
-  const hoje = new Date();
-  const idade = hoje.getFullYear() - dataNasc.getFullYear();
-  const m = hoje.getMonth() - mes;
-  if (idade < 13 || (idade === 13 && (m < 0 || (m === 0 && hoje.getDate() < dia)))) {
-    erro1.innerText = "Você precisa ter pelo menos 13 anos.";
-    return;
-  }
-
-  document.getElementById("formEtapa1").classList.add("form-oculto");
-  document.getElementById("formEtapa1").classList.remove("form-ativo");
-  document.getElementById("formEtapa2").classList.remove("form-oculto");
-  document.getElementById("formEtapa2").classList.add("form-ativo");
 }
 
-document.getElementById("formEtapa2").addEventListener("submit", function (e) {
-  e.preventDefault();
+// CADASTRO2 - Valida novamente e vai para cadastro3
+function validarFormulario() {
+  const nome = document.getElementById("nome").value.trim();
+  const nascimento = document.getElementById("nascimento").value.trim();
+  const erro = document.getElementById("mensagemErro");
 
-  const email = document.getElementById("email").value.trim();
-  const cpf = document.getElementById("cpf").value.trim();
-  const erro2 = document.getElementById("erro2");
-  erro2.innerText = "";
-
-  const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const cpfValido = /^\d{11}$/;
-
-  if (!emailValido.test(email)) {
-    erro2.innerText = "E-mail inválido.";
-    return;
+  if (!nome || !nascimento) {
+    erro.textContent = "Preencha todos os campos corretamente.";
+    return false;
+  } else {
+    window.location.href = "cadastro3.html";
+    return false; // para impedir envio real do formulário
   }
+}
 
-  if (!cpfValido.test(cpf)) {
-    erro2.innerText = "CPF deve conter 11 dígitos numéricos.";
-    return;
-  }
+// CADASTRO3 - Clique em qualquer lugar vai para cadastro4
+function irParaCadastro4() {
+  window.location.href = "cadastro4.html";
+}
 
-  alert("Cadastro concluído com sucesso!");
-  
+// CADASTRO4 - Clique em qualquer lugar vai para email.html
+function irParaEmail() {
+  window.location.href = "email.html";
+}
+
+// EMAIL ENCONTRADO - Vai para dashboard depois de 2s
+function redirecionarParaDashboard() {
+  setTimeout(() => {
+    window.location.href = "dashboard.html";
+  }, 2000);
+}
+
+// E-MAIL NÃO ENCONTRADO - ícones navegam
+document.addEventListener("DOMContentLoaded", () => {
+  const homeBtn = document.getElementById("nav-home");
+  const backBtn = document.getElementById("nav-back");
+  const forwardBtn = document.getElementById("nav-forward");
+
+  if (homeBtn) homeBtn.onclick = () => window.location.href = "cadastro1.html";
+  if (backBtn) backBtn.onclick = () => history.back();
+  if (forwardBtn) forwardBtn.onclick = () => history.forward();
 });
