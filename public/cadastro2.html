@@ -2,29 +2,43 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Cadastro - PagTrem Funcionário</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro - PagTrem</title>
   <link rel="stylesheet" href="../style/cadastro2.css">
 </head>
 
 <body>
-  <div class="logo">
-    <img src="https://img.icons8.com/ios-filled/100/train.png" alt="Logo Trem" />
-    <h1>PagTrem</h1>
-    <span>Funcionário</span>
-  </div>
+  <div class="container">
+    <div class="top-logo">
+      <img src="https://img.icons8.com/ios-filled/50/train.png" alt="Trem">
+    </div>
 
-  <div class="form-container">
+    
     <h2>Cadastro</h2>
+
     <form id="cadastroForm" onsubmit="return validarFormulario()">
-      <label for="email">E-mail:</label>
-      <input type="text" id="email" name="email" required>
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" placeholder="Digite aqui..." required>
 
-      <label for="senha">Senha:</label>
-      <input type="password" id="senha" name="senha" required>
+      <label for="nascimento">Data de nascimento:</label>
+      <input type="text" id="nascimento" placeholder="dd / mm / aaaa" required>
 
-      <input type="submit" value="Cadastrar">
+      <div id="mensagemErro" class="erro"></div>
+
+      <button type="submit">Próximo</button>
     </form>
-    <div id="mensagemErro" class="error"></div>
+
+    <div class="indicadores">
+      <div class="ativo"></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <div class="navegacao">
+      <button>&larr;</button>
+      <button>&#8962;</button>
+      <button>&rarr;</button>
+    </div>
   </div>
 
   <script src="../script/script.js"></script>
