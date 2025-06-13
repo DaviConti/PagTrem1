@@ -1,4 +1,4 @@
- function proximaEtapa() {
+function proximaEtapa() {
   const nome = document.getElementById("nome").value.trim();
   const nascimento = document.getElementById("nascimento").value.trim();
   const erro1 = document.getElementById("erro1");
@@ -10,7 +10,7 @@
   }
 }
 
- function validarFormulario() {
+function validarFormulario() {
   const nome = document.getElementById("nome").value.trim();
   const nascimento = document.getElementById("nascimento").value.trim();
   const erro = document.getElementById("mensagemErro");
@@ -20,27 +20,26 @@
     return false;
   } else {
     window.location.href = "cadastro3.html";
-    return false;
+    return false; 
   }
 }
 
- function irParaCadastro4() {
+function irParaCadastro4() {
   window.location.href = "cadastro4.html";
 }
 
- function irParaEmail() {
+function irParaEmail() {
   window.location.href = "email.html";
- 
 }
 
- function redirecionarParaDashboard() {
+
+function redirecionarParaDashboard() {
   setTimeout(() => {
     window.location.href = "dashboard.html";
   }, 2000);
-
 }
 
- document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   const homeBtn = document.getElementById("nav-home");
   const backBtn = document.getElementById("nav-back");
   const forwardBtn = document.getElementById("nav-forward");
@@ -49,7 +48,6 @@
   if (backBtn) backBtn.onclick = () => history.back();
   if (forwardBtn) forwardBtn.onclick = () => history.forward();
 });
-
 function irParaTela2() {
   const nome = document.getElementById('nome').value.trim();
   const nascimento = document.getElementById('nascimento').value;
@@ -72,10 +70,9 @@ function enviarCadastro() {
     return;
   }
 
-
+ 
   alert("Cadastro concluído com sucesso!");
 }
-
 function validarLogin() {
   const usuario = document.getElementById("usuario").value.trim();
   const senha = document.getElementById("senha").value.trim();
@@ -85,12 +82,11 @@ function validarLogin() {
 
 
   if (usuario === "admin" && senha === "1234") {
-    window.location.href = "menu.html";
+    window.location.href = "menu.html"; 
   } else {
     mensagemErro.textContent = "Usuário ou senha inválidos.";
   }
 }
-
 function irParaTela(num) {
   document.querySelectorAll('.tela').forEach(t => t.classList.remove('ativa'));
   document.getElementById(`tela${num}`).classList.add('ativa');
@@ -104,12 +100,10 @@ function validarTela1() {
   const nome = document.getElementById("nome").value.trim();
   const nasc = document.getElementById("nascimento").value;
   const erro = document.getElementById("erro1");
-
   if (nome === "" || nasc === "") {
     erro.textContent = "Preencha todos os campos.";
     return;
   }
-
   erro.textContent = "";
   irParaTela(2);
 }
@@ -124,7 +118,6 @@ function validarTela2() {
     erro.textContent = "E-mail inválido ou senha muito curta.";
     return;
   }
-
   erro.textContent = "";
   irParaTela(3);
 }
