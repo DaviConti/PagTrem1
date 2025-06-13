@@ -132,3 +132,6 @@ function validarTela2() {
 function finalizar() {
   alert("Cadastro finalizado com sucesso!");
 }
+document.body.addEventListener("click", () => {
+  window.location.href = "chat.html";
+});
