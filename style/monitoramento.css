@@ -75,6 +75,13 @@ body {
     margin-top: 30px;
 }
 
+.maintenance-item {
+    display: flex;
+    background-color: #2e3d54; 
+    border-radius: 15px;
+    overflow: hidden;
+    color: white;
+}
 
 .maintenance-item .image-container {
     width: 150px; 
