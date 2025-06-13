@@ -1,61 +1,47 @@
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cadastro Completo - PagTrem</title>
-  <link rel="stylesheet" href="../style/cadastro1.css" />
+  <meta charset="UTF-8">
+  <title>Cadastro</title>
+  <link rel="stylesheet" href="../style/cadastro1.css">
 </head>
 <body>
-
-  <div class="container">
-    
-    <div class="tela ativa" id="tela1">
-      <h2>Cadastro - Etapa 1</h2>
-      <label>Nome:</label>
-      <input type="text" id="nome" placeholder="Digite seu nome" />
-      <label>Data de nascimento:</label>
-      <input type="date" id="nascimento" />
-      <div class="erro" id="erro1"></div>
-      <button onclick="validarTela1()">Próximo</button>
+  <div class="container" id="tela1">
+    <h1>Cadastro</h1>
+    <label>Nome:</label>
+    <input type="text" id="nome" placeholder="Digite aqui...">
+    <label>Data de nascimento:</label>
+    <input type="date" id="nascimento">
+    <div class="nav">
+      <button onclick="proximaTela(1)">➜</button>
     </div>
-
-    
-    <div class="tela" id="tela2">
-      <h2>Cadastro - Etapa 2</h2>
-      <label>E-mail:</label>
-      <input type="email" id="email" placeholder="Digite seu e-mail" />
-      <label>Senha:</label>
-      <input type="password" id="senha" placeholder="Digite sua senha (mín. 6 caracteres)" />
-      <div class="erro" id="erro2"></div>
-      <button onclick="voltar(1)">Voltar</button>
-      <button onclick="validarTela2()">Próximo</button>
-    </div>
-
-    
-    <div class="tela" id="tela3">
-      <h2>Sua Localização</h2>
-      <img src="https://img.icons8.com/ios-filled/50/train.png" alt="Ícone Trem">
-      <h3 class="borda">🔻 Clique aqui para buscar localização</h3>
-      <img src="https://i.imgur.com/qkKy8Uj.gif" alt="Barra de Carregamento" />
-      <button onclick="voltar(2)">Voltar</button>
-      <button onclick="irParaTela(4)">Próximo</button>
-    </div>
-
-    
-    <div class="tela" id="tela4">
-      <h2>Foto de perfil</h2>
-      <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Foto Exemplo" width="150" />
-      <p>Selecione uma foto de perfil uniformizado.</p>
-      <input type="file" accept="image/*" />
-      <h3 class="borda">Clique na tela para continuar</h3>
-      <button onclick="voltar(3)">Voltar</button>
-      <button onclick="finalizar()">Finalizar</button>
-    </div>
-
   </div>
-  <script src="../PagTrem1/script/script.js"></script>
 
+  <div class="container hidden" id="tela2">
+    <h1>Cadastro</h1>
+    <label>Sua localização:</label>
+    <select id="localizacao">
+      <option value="">Clique aqui</option>
+      <option value="SP">São Paulo</option>
+      <option value="RJ">Rio de Janeiro</option>
+      <option value="MG">Minas Gerais</option>
+    </select>
+    <div class="nav">
+      <button onclick="voltarTela(1)">⬅</button>
+      <button onclick="proximaTela(2)">➜</button>
+    </div>
+  </div>
 
+  <div class="container hidden" id="tela3">
+    <h1>Cadastro</h1>
+    <label>Foto de perfil uniformizado:</label>
+    <input type="file" id="foto" accept="image/*">
+    <div class="nav">
+      <button onclick="voltarTela(2)">⬅</button>
+      <button onclick="validarFinal()">Continuar</button>
+    </div>
+  </div>
+
+  <script src="../script/script.js"></script>
 </body>
-
 </html>

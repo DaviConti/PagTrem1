@@ -132,3 +132,55 @@ function validarTela2() {
 function finalizar() {
   alert("Cadastro finalizado com sucesso!");
 }
+function proximaTela(atual) {
+  if (atual === 1) {
+    const nome = document.getElementById("nome").value.trim();
+    const nascimento = document.getElementById("nascimento").value;
+
+    if (nome === "") {
+      alert("Por favor, preencha o nome.");
+      return;
+    }
+
+    if (!nascimento) {
+      alert("Por favor, preencha a data de nascimento.");
+      return;
+    }
+
+    document.getElementById("tela1").classList.add("hidden");
+    document.getElementById("tela2").classList.remove("hidden");
+  }
+
+  if (atual === 2) {
+    const local = document.getElementById("localizacao").value;
+    if (local === "") {
+      alert("Por favor, selecione sua localização.");
+      return;
+    }
+
+    document.getElementById("tela2").classList.add("hidden");
+    document.getElementById("tela3").classList.remove("hidden");
+  }
+}
+
+function voltarTela(anterior) {
+  if (anterior === 1) {
+    document.getElementById("tela2").classList.add("hidden");
+    document.getElementById("tela1").classList.remove("hidden");
+  }
+
+  if (anterior === 2) {
+    document.getElementById("tela3").classList.add("hidden");
+    document.getElementById("tela2").classList.remove("hidden");
+  }
+}
+
+function validarFinal() {
+  const foto = document.getElementById("foto").files[0];
+  if (!foto) {
+    alert("Por favor, selecione uma foto de perfil.");
+    return;
+  }
+
+  alert("Cadastro concluído com sucesso!");
+}

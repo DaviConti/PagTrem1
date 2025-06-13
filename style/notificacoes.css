@@ -18,7 +18,7 @@ body {
     flex-direction: column;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    
 }
 
 .notification-header {
@@ -28,7 +28,7 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    
 }
 
 .header-icon {
@@ -77,7 +77,7 @@ body {
 }
 
 .highlight-fail {
-    color: red;
+    color: rgb(0, 0, 0);
     font-weight: bold;
 }
 
@@ -102,7 +102,7 @@ body {
 .notification-footer {
     background-color: #0d1a2f;
     padding: 15px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    
 }
 
 .footer-nav {
