@@ -1,11 +1,10 @@
-# TODO: Transform Dashboard to PHP
+# TODO: Transform Menu to PHP
 
 ## Completed Steps
-- [x] Created `config/db.php` for database connection.
-- [x] Updated `public/dashboard.php` to include PHP session handling, authentication check, dynamic content from database, and inclusion of `menu.php`.
+- [x] Transformed `public/menu.php` from static HTML to PHP by adding session_start(), including `config/db.php`, updating links to .php files, and fixing script paths.
 
 ## Next Steps
-- [ ] Test the dashboard page by starting the XAMPP server and navigating to it.
-- [ ] Verify database connection and ensure the 'categories' table exists in `db.sql`.
-- [ ] Check for PHP errors and ensure session variables are set in login.
-- [ ] Test navigation links and dynamic buttons.
+- [ ] Test the menu page by starting the XAMPP server and navigating to `public/menu.php`.
+- [ ] Verify that links to other PHP pages (e.g., dashboard.php) work correctly.
+- [ ] Check for PHP errors and ensure session handling is consistent across pages.
+- [ ] Optionally, make menu items dynamic using database data from `config/routes_functions.php` if needed.

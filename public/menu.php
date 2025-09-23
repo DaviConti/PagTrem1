@@ -1,3 +1,8 @@
+<?php
+session_start(); 
+include '../config/db.php'; 
+?>
+
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -15,19 +20,19 @@
         </div>
 
         <div class="menu-items-container">
-            <a href="dashboard.html" class="menu-item">
+            <a href="dashboard.php" class="menu-item">
                 Dashboard
             </a>
-            <a href="gestao_rotas.html" class="menu-item">
+            <a href="gestaoderotas.php" class="menu-item">
                 Gestão de Rotas
             </a>
-            <a href="relatorios_analises.html" class="menu-item">
+            <a href="relatorios.php" class="menu-item">
                 Relatórios e análises
             </a>
-            <a href="notificacoes.html" class="menu-item notification-item">
+            <a href="notificacoes.php" class="menu-item notification-item">
                 Notificações
                 <span class="badge"></span> </a>
-            <a href="monitoramento_manutencoes.html" class="menu-item">
+            <a href="monitoramento.php" class="menu-item">
                 Monitoramento de manutenções
             </a>
         </div>
@@ -42,6 +47,6 @@
         </div>
     </div>
 
-    <script src="menu_script.js"></script>
+    <script src="../script/menu_script.js"></script>
 </body>
 </html>
