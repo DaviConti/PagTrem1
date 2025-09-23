@@ -132,3 +132,23 @@ function validarTela2() {
 function finalizar() {
   alert("Cadastro finalizado com sucesso!");
 }
+
+function proximaTela(num) {
+  if (num === 1) {
+    document.getElementById('tela1').classList.add('hidden');
+    document.getElementById('tela2').classList.remove('hidden');
+  } else if (num === 2) {
+    document.getElementById('tela2').classList.add('hidden');
+    document.getElementById('tela3').classList.remove('hidden');
+  }
+}
+
+function voltarTela(num) {
+  if (num === 1) {
+    document.getElementById('tela2').classList.add('hidden');
+    document.getElementById('tela1').classList.remove('hidden');
+  } else if (num === 2) {
+    document.getElementById('tela3').classList.add('hidden');
+    document.getElementById('tela2').classList.remove('hidden');
+  }
+}
