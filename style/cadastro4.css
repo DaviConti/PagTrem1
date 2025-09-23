@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #001233;
+  background-color: #0d1a33;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif;
   color: white;
   display: flex;
@@ -69,7 +69,7 @@ h2 {
 
 .button-upload:hover {
   background-color: white;
-  color: #00132A;
+  color: #0d1a33;
   transform: translateY(-3px);
   box-shadow: 0 0 10px white;
 }
