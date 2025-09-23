@@ -1,10 +1,6 @@
-# TODO: Transform Dashboard to PHP
+# TODO for Notifications in PHP
 
-## Completed Steps
-- [x] Transformed `public/menu.php` from static HTML to PHP by adding session_start(), including `config/db.php`, updating links to .php files, and fixing script paths.
-
-## Next Steps
-- [ ] Test the dashboard page by starting the XAMPP server and navigating to it.
-- [ ] Verify database connection and ensure the 'categories' table exists in `db.sql`.
-- [ ] Check for PHP errors and ensure session variables are set in login.
-- [ ] Test navigation links and dynamic buttons.
+- [x] Create SQL script for notifications table
+- [x] Edit public/notificacoes.php to make it dynamic
+- [ ] Run the SQL script to create the table in the database
+- [ ] Test the notifications page

@@ -1,3 +1,11 @@
+<?php
+include '../config/db.php';
+
+
+$sql = "SELECT * FROM notifications ORDER BY created_at DESC";
+$result = $conn->query($sql);
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,11 +23,19 @@
             <h1 class="notification-title">Notificações</h1>
         </header>
         <main class="notification-main">
-            <div class="notification-card">
-                <p>Informamos que um trem apresentou <span class="highlight-fail">falha técnica</span> na Linha Norte, próximo ao bairro Jardim das Flores. A equipe de manutenção já foi acionada e está atuando para resolver o problema o mais rápido possível.</p>
-                <div class="arrow-up"></div>
-                <p class="important-communication">Comunicado importante!</p>
-            </div>
+            <?php if ($result->num_rows > 0): ?>
+                <?php while($row = $result->fetch_assoc()): ?>
+                    <div class="notification-card">
+                        <p><?php echo htmlspecialchars($row['message']); ?></p>
+                        <div class="arrow-up"></div>
+                        <p class="important-communication">Comunicado importante!</p>
+                    </div>
+                <?php endwhile; ?>
+            <?php else: ?>
+                <div class="notification-card">
+                    <p>Nenhuma notificação disponível no momento.</p>
+                </div>
+            <?php endif; ?>
         </main>
         <footer class="notification-footer">
             <nav class="footer-nav">
