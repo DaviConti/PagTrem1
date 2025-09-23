@@ -10,7 +10,7 @@
 <body>
   <a href="../public/login.html">
     <div id="logo">
-      <img src="../img/icone pagtrem-Photoroom.png" alt="Logo" width="380" height="250" />
+      <img src="../img/unnamed.png" alt="Logo" width="420" height="250" />
     </div>
     <div>
       <h1>Clique na tela para continuar</h1>

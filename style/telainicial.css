@@ -1,31 +1,45 @@
 body {
-    background-color: #0d1a33;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
+  background-color: #0b1a37; 
+  font-family: Arial, sans-serif; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  margin: 0;
+  color: #ffffff; 
+  text-align: center;
 }
 
-div {
-    margin: 20px;
-    text-align: center;
+.app-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; 
 }
 
-img {
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(77, 40, 40, 0);
+.train-icon {
+  width: 80px; 
+  height: auto;
+  fill: #ffffff; 
 }
 
-h1 {
-    font-size: 24px;
-    color: white;
-    cursor: pointer;
-    transition: color 0.3s ease;
+.app-name {
+  font-size: 3rem; 
+  font-weight: bold;
+  margin: 0;
 }
 
-h1:hover {
-    color: #ffffff;
+.app-subtitle {
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin: 0;
 }
+
+.instruction-text {
+  font-size: 1rem;
+  font-weight: normal;
+  margin-top: 50px;
+  opacity: 0.8; 
+}
+
