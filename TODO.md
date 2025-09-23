@@ -1,11 +1,12 @@
-# TODO: Transform Dashboard to PHP
+# TODO - Route Management System
 
 ## Completed Steps
-- [x] Created `config/db.php` for database connection.
-- [x] Updated `public/dashboard.php` to include PHP session handling, authentication check, dynamic content from database, and inclusion of `menu.php`.
+- [x] Create `config/routes_functions.php` with database interaction functions
+- [x] Update `public/gestaoderotas.php` to include dynamic PHP functionality
+- [x] Add styles to `style/gestaoderotas.css` for new elements
+- [x] Implement add, update, delete, and list routes functionality
 
 ## Next Steps
-- [ ] Test the dashboard page by starting the XAMPP server and navigating to it.
-- [ ] Verify database connection and ensure the 'categories' table exists in `db.sql`.
-- [ ] Check for PHP errors and ensure session variables are set in login.
-- [ ] Test navigation links and dynamic buttons.
+- [ ] Test the route management system
+- [ ] Verify database interactions
+- [ ] Handle any errors or improvements
