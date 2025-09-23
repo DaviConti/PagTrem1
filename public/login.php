@@ -1,3 +1,40 @@
+<?php
+session_start();
+include '../config/db.php';
+
+$error = '';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $username = trim($_POST['usuario']);
+    $password = trim($_POST['senha']);
+
+    if (!empty($username) && !empty($password)) {
+        $stmt = $conn->prepare("SELECT pk, username, senha FROM ususarios WHERE username = ?");
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows == 1) {
+            $row = $result->fetch_assoc();
+            if ($password === $row['senha']) { 
+                $_SESSION['user_id'] = $row['pk'];
+                $_SESSION['username'] = $row['username'];
+                header("Location: dashboard.php");
+                exit();
+            } else {
+                $error = "Usuário ou senha inválidos.";
+            }
+        } else {
+            $error = "Usuário ou senha inválidos.";
+        }
+        $stmt->close();
+    } else {
+        $error = "Preencha todos os campos.";
+    }
+}
+$conn->close();
+?>
+
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
@@ -10,14 +47,19 @@
   <div id="login">
     <h2>Login</h2>
 
-    <label for="usuario">Usuário:</label><br>
-    <input type="text" id="usuario" name="usuario" required><br>
+    <?php if ($error): ?>
+      <div id="mensagemErro" style="color: red; margin-top: 10px;"><?php echo htmlspecialchars($error); ?></div>
+    <?php endif; ?>
 
-    <label for="senha">Senha:</label><br>
-    <input type="password" id="senha" name="senha" required><br><br>
+    <form method="POST" action="">
+      <label for="usuario">Usuário:</label><br>
+      <input type="text" id="usuario" name="usuario" required><br>
 
-    <button onclick="validarLogin()">Entrar</button>
-    <div id="mensagemErro" style="color: red; margin-top: 10px;"></div>
+      <label for="senha">Senha:</label><br>
+      <input type="password" id="senha" name="senha" required><br><br>
+
+      <button type="submit">Entrar</button>
+    </form>
   </div>
 
   <script src="../script/script.js"></script>
