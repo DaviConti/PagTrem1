@@ -1,16 +1,16 @@
 <?php
 session_start();
 
-// Check if user is logged in
+
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit();
 }
 
-// Include database connection
+
 include '../config/db.php';
 
-// Fetch categories from database (assuming a 'categories' table)
+
 $sql = "SELECT name FROM categories ORDER BY name";
 $result = $conn->query($sql);
 
