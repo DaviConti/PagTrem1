@@ -1,42 +1,31 @@
 body {
-    background-color: #0d1a33; /* Dark blue background color */
-    color: #fff; /* White text color */
-    font-family: Arial, sans-serif;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Full viewport height */
-    text-align: center;
-}
-
-.container {
+    background-color: #001233;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.train-icon {
-    width: 100px;
-    height: auto;
-    border-radius: 50%; /* Makes the placeholder image circular */
-    margin-bottom: 20px;
-}
-
-.title {
-    font-size: 3em;
-    font-weight: bold;
+    justify-content: center;
+    height: 100vh;
     margin: 0;
 }
 
-.subtitle {
-    font-size: 1.5em;
-    font-weight: normal;
-    margin: 0 0 40px 0;
+div {
+    margin: 20px;
+    text-align: center;
 }
 
-.instruction {
-    font-size: 1em;
-    font-weight: normal;
-    margin: 0;
+img {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+h1 {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+h1:hover {
+    color: #0077cc;
 }
