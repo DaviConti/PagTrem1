@@ -1,8 +1,8 @@
 <?php
-// Database connection
+
 $servername = "localhost";
-$username = "root"; // Change as needed
-$password = ""; // Change as needed
+$username = "root"; 
+$password = ""; 
 $dbname = "login_db";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -20,26 +20,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $localizacao = $_POST['localizacao'];
     $foto = $_FILES['foto'];
 
-    // Validation
+    
     if (empty($nome) || empty($nascimento) || empty($localizacao) || $foto['error'] != 0) {
         $error_message = "Por favor, preencha todos os campos e selecione uma foto.";
     } else {
-        // Handle file upload
+        
         $target_dir = "uploads/";
         $target_file = $target_dir . basename($foto["name"]);
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
-        // Check if image file is a actual image or fake image
         $check = getimagesize($foto["tmp_name"]);
         if ($check === false) {
             $error_message = "O arquivo não é uma imagem.";
-        } elseif ($foto["size"] > 5000000) { // 5MB limit
+        } elseif ($foto["size"] > 5000000) { 
             $error_message = "O arquivo é muito grande.";
         } elseif (!in_array($imageFileType, ["jpg", "png", "jpeg", "gif"])) {
             $error_message = "Apenas arquivos JPG, JPEG, PNG e GIF são permitidos.";
         } else {
             if (move_uploaded_file($foto["tmp_name"], $target_file)) {
-                // Insert into database
+               
                 $sql = "INSERT INTO ususarios (nome, nascimento, localizacao, foto) VALUES (?, ?, ?, ?)";
                 $stmt = $conn->prepare($sql);
                 $stmt->bind_param("ssss", $nome, $nascimento, $localizacao, $target_file);
