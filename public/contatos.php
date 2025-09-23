@@ -1,3 +1,12 @@
+<?php
+// Log page access
+$timestamp = date('Y-m-d H:i:s');
+$ip = $_SERVER['REMOTE_ADDR'];
+$user_agent = $_SERVER['HTTP_USER_AGENT'];
+$log_message = "Page accessed: $timestamp - IP: $ip - User Agent: $user_agent";
+error_log($log_message);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -5,10 +14,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contatos</title>
   <link rel="stylesheet" href="../style/contatos.css">
+  <script>
+    function logClick() {
+      <?php
+      $click_log = "Link clicked: " . date('Y-m-d H:i:s') . " - IP: $ip";
+      error_log($click_log);
+      ?>
+    }
+  </script>
 </head>
 
 <body>
-  <a href="../public/chat.html">
+  <a href="../public/chat.html" onclick="logClick()">
     <div class="logo">
       <img src="../img/unnamed.png" alt="Logo" width="420" height="250">
     </div>
