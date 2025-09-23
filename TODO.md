@@ -1,11 +1,11 @@
-# TODO: Transform Login Page to PHP
+# TODO: Transform Dashboard to PHP
 
-## Steps to Complete
-1. [x] Modify `public/login.php` to add PHP authentication logic (form handling, database query, session management).
-2. [ ] Test the login functionality.
-3. [ ] Verify session management and redirection.
-4. [ ] Update TODO.md with progress.
+## Completed Steps
+- [x] Created `config/db.php` for database connection.
+- [x] Updated `public/dashboard.php` to include PHP session handling, authentication check, dynamic content from database, and inclusion of `menu.php`.
 
-## Completed
-- Initial analysis and plan confirmation.
-- Modified `public/login.php` with PHP authentication logic.
+## Next Steps
+- [ ] Test the dashboard page by starting the XAMPP server and navigating to it.
+- [ ] Verify database connection and ensure the 'categories' table exists in `db.sql`.
+- [ ] Check for PHP errors and ensure session variables are set in login.
+- [ ] Test navigation links and dynamic buttons.
