@@ -32,10 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $error_message = "Apenas arquivos JPG, JPEG, PNG e GIF são permitidos.";
         } else {
             if (move_uploaded_file($foto["tmp_name"], $target_file)) {
-                // Assuming user ID is stored in session or can be retrieved
-                // For simplicity, you might need to adjust based on your session management
                 $success_message = "Foto enviada com sucesso! Cadastro concluído.";
-                // Redirect to dashboard or success page
                 header("Location: dashboard.php");
                 exit();
             } else {

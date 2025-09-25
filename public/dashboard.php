@@ -20,7 +20,7 @@ if ($result->num_rows > 0) {
         $categories[] = htmlspecialchars($row['name']);
     }
 } else {
-    $categories = ["Monotrilhos", "De passageiros", "Trens militarizados"]; // Fallback if no data
+    $categories = ["Monotrilhos", "De passageiros", "Trens militarizados"]; 
 }
 
 $conn->close();
