@@ -20,8 +20,18 @@ if ($result->num_rows > 0) {
         $categories[] = htmlspecialchars($row['name']);
     }
 } else {
-    $categories = ["Monotrilhos", "De passageiros", "Trens militarizados"]; 
+    $categories = ["Monotrilhos", "De passageiros", "Trens militarizados"];
 }
+
+// Get user count
+$user_count_sql = "SELECT COUNT(*) as total FROM usuarios";
+$user_result = $conn->query($user_count_sql);
+$user_count = $user_result->fetch_assoc()['total'];
+
+// Get sensor count
+$sensor_count_sql = "SELECT COUNT(*) as total FROM sensors";
+$sensor_result = $conn->query($sensor_count_sql);
+$sensor_count = $sensor_result->fetch_assoc()['total'];
 
 $conn->close();
 ?>
@@ -44,6 +54,11 @@ $conn->close();
             <h1>Dashboard</h1>
         </header>
         <main class="main-content">
+            <div class="stats">
+                <div class="stat">Total Usuários: <?php echo $user_count; ?></div>
+                <div class="stat">Total Sensores: <?php echo $sensor_count; ?></div>
+            </div>
+            <h2>Categorias de Trens</h2>
             <?php foreach ($categories as $category): ?>
                 <button class="button" onclick="alert('Categoria: <?php echo $category; ?>')"><?php echo $category; ?></button>
             <?php endforeach; ?>

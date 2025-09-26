@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
+}
+?>
+
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -7,6 +16,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <div class="container">
+        <?php include '../public/menu.php'; ?>
 
             <div class="header">
                 <img src="../img/icone pagtrem-Photoroom.png" alt=""></i> Relatórios e análises

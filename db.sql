@@ -1,8 +1,8 @@
 CREATE DATABASE login_db;
 
-    USE login_db;
+USE login_db;
 
-CREATE TABLE ususarios (
+CREATE TABLE usuarios (
         pk INT AUTO_INCREMENT PRIMARY KEY,
         username VARCHAR (120) NOT NULL UNIQUE,
         senha VARCHAR (255) NOT NULL,
@@ -13,5 +13,25 @@ CREATE TABLE ususarios (
         foto VARCHAR (255)
     );
 
-INSERT INTO ususarios (username, senha) VALUES ('admin', '123');
+INSERT INTO usuarios (username, senha, cargo, nome) VALUES ('admin', '123', 'adm', 'Administrador');
+
+CREATE TABLE categories (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL
+);
+
+INSERT INTO categories (name) VALUES ('Monotrilhos'), ('De passageiros'), ('Trens militarizados');
+
+CREATE TABLE sensors (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    status ENUM('ativo', 'inativo', 'manutenção') DEFAULT 'ativo',
+    location VARCHAR(255),
+    last_update TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+INSERT INTO sensors (name, status, location) VALUES
+('Sensor Temperatura Linha Norte', 'ativo', 'Estação Central'),
+('Sensor Velocidade Trem 1', 'manutenção', 'Linha Sul'),
+('Sensor Pressão Monotrilho', 'ativo', 'Jardim das Flores');
 

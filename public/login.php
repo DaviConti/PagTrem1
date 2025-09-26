@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = trim($_POST['senha']);
 
     if (!empty($username) && !empty($password)) {
-        $stmt = $conn->prepare("SELECT pk, username, senha FROM ususarios WHERE username = ?");
+        $stmt = $conn->prepare("SELECT pk, username, senha FROM usuarios WHERE username = ?");
         $stmt->bind_param("s", $username);
         $stmt->execute();
         $result = $stmt->get_result();
