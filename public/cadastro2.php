@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $erro = "";
 $nome = "";
@@ -8,18 +9,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nome = trim($_POST["nome"]);
     $nascimento = trim($_POST["nascimento"]);
 
-
     if (empty($nome) || empty($nascimento)) {
         $erro = "Preencha todos os campos!";
     } elseif (!preg_match("/^\d{2}\/\d{2}\/\d{4}$/", $nascimento)) {
         $erro = "Data de nascimento inválida. Use o formato dd/mm/aaaa.";
     } else {
-
-        header("Location: sucesso.php");
+        $_SESSION['cadastro_nome'] = $nome;
+        $_SESSION['cadastro_nascimento'] = $nascimento;
+        header("Location: cadastro3.php");
         exit();
-      }
-
     }
+}
 
 echo '<!DOCTYPE html>';
 echo '<html lang="pt-BR">';

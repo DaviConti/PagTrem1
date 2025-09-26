@@ -46,7 +46,7 @@ $conn->close();
 </head>
 <body>
     <div class="container">
-        <?php include '../public/menu.php'; ?>
+        <?php include 'menu.php'; ?>
         <header class="header">
             <div class="logo">
                 <img src="../img/icone pagtrem-Photoroom.png" alt="Trem Icone">

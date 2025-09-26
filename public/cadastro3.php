@@ -1,48 +1,24 @@
 <?php
-session_start(); 
-
-/
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "atvmath"; 
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Conexão falhou: " . $conn->connect_error);
-}
-
+session_start();
+include '../config/db.php';
 
 $message = "";
 $address = $city = $state = $zip_code = "";
 
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $address = $_POST['address'];
-    $city = $_POST['city'];
-    $state = $_POST['state'];
-    $zip_code = $_POST['zip_code'];
-
+    $address = trim($_POST['address']);
+    $city = trim($_POST['city']);
+    $state = trim($_POST['state']);
+    $zip_code = trim($_POST['zip_code']);
 
     if (empty($address) || empty($city) || empty($state) || empty($zip_code)) {
         $message = "Todos os campos são obrigatórios.";
     } else {
-
-        $address = $conn->real_escape_string($address);
-        $city = $conn->real_escape_string($city);
-        $state = $conn->real_escape_string($state);
-        $zip_code = $conn->real_escape_string($zip_code);
-
-       
-        $sql = "INSERT INTO locations (address, city, state, zip_code) VALUES ('$address', '$city', '$state', '$zip_code')";
-        if ($conn->query($sql) === TRUE) {
-            $message = "Localização salva com sucesso! Prosseguindo para o próximo passo.";
-            
-            header("Location: cadastro4.php");
-            exit();
-        } else {
-            $message = "Erro ao salvar: " . $conn->error;
-        }
+        $localizacao = $address . ', ' . $city . ', ' . $state . ' - ' . $zip_code;
+        $_SESSION['cadastro_localizacao'] = $localizacao;
+        $message = "Localização salva com sucesso! Prosseguindo para o próximo passo.";
+        header("Location: cadastro4.php");
+        exit();
     }
 }
 

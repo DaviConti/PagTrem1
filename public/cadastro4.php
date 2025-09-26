@@ -1,14 +1,6 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "login_db";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+session_start();
+include '../config/db.php';
 
 $success_message = "";
 $error_message = "";
@@ -32,9 +24,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $error_message = "Apenas arquivos JPG, JPEG, PNG e GIF são permitidos.";
         } else {
             if (move_uploaded_file($foto["tmp_name"], $target_file)) {
-                $success_message = "Foto enviada com sucesso! Cadastro concluído.";
-                header("Location: dashboard.php");
-                exit();
+                // Insert user data
+                $stmt = $conn->prepare("INSERT INTO usuarios (username, senha, cargo, nome, nascimento, localizacao, foto) VALUES (?, ?, ?, ?, ?, ?, ?)");
+                $stmt->bind_param("sssssss", $_SESSION['cadastro_username'], $_SESSION['cadastro_senha'], $_SESSION['cadastro_cargo'], $_SESSION['cadastro_nome'], $_SESSION['cadastro_nascimento'], $_SESSION['cadastro_localizacao'], $target_file);
+                if ($stmt->execute()) {
+                    $success_message = "Foto enviada com sucesso! Cadastro concluído.";
+                    // Set session for login
+                    $_SESSION['user_id'] = $conn->insert_id;
+                    $_SESSION['username'] = $_SESSION['cadastro_username'];
+                    // Clear cadastro session
+                    unset($_SESSION['cadastro_username'], $_SESSION['cadastro_senha'], $_SESSION['cadastro_cargo'], $_SESSION['cadastro_nome'], $_SESSION['cadastro_nascimento'], $_SESSION['cadastro_localizacao']);
+                    header("Location: dashboard.php");
+                    exit();
+                } else {
+                    $error_message = "Erro ao salvar dados: " . $conn->error;
+                }
+                $stmt->close();
             } else {
                 $error_message = "Erro ao fazer upload da foto.";
             }

@@ -13,7 +13,7 @@ CREATE TABLE usuarios (
         foto VARCHAR (255)
     );
 
-INSERT INTO usuarios (username, senha, cargo, nome) VALUES ('admin', '123', 'adm', 'Administrador');
+INSERT INTO usuarios (username, senha, cargo, nome) VALUES ('admin', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'adm', 'Administrador');
 
 CREATE TABLE categories (
     id INT AUTO_INCREMENT PRIMARY KEY,

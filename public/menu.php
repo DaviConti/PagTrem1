@@ -50,5 +50,3 @@ if (!isset($_SESSION['user_id'])) {
         </div>
     </div>
 </div>
-
-<script src="../script/menu_script.js"></script>
