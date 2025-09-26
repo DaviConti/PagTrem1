@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if ($result->num_rows == 1) {
            
-            $success = "Instruções para redefinir a senha foram enviadas para o seu e-mail.";
+            $success = "Instruções para redefinir a senha, foram enviadas para o seu e-mail.";
            
         } else {
             $error = "E-mail ou usuário não encontrado.";
