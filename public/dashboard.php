@@ -23,12 +23,10 @@ if ($result->num_rows > 0) {
     $categories = ["Monotrilhos", "De passageiros", "Trens militarizados"];
 }
 
-// Get user count
 $user_count_sql = "SELECT COUNT(*) as total FROM usuarios";
 $user_result = $conn->query($user_count_sql);
 $user_count = $user_result->fetch_assoc()['total'];
 
-// Get sensor count
 $sensor_count_sql = "SELECT COUNT(*) as total FROM sensors";
 $sensor_result = $conn->query($sensor_count_sql);
 $sensor_count = $sensor_result->fetch_assoc()['total'];
