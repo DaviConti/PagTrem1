@@ -76,6 +76,24 @@ body {
     max-width: 300px;
     color: white;
     font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.try-again-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.try-again-btn:hover {
+    background-color: #0056b3;
 }
 
 .footer-navigation {
@@ -86,8 +104,18 @@ body {
     box-sizing: border-box;
 }
 
+.footer-navigation .nav-link {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-navigation .nav-link:hover {
+    color: #007bff;
+}
+
 .footer-navigation i {
     font-size: 2.2em;
-    color: white;
+    color: inherit;
     cursor: pointer;
 }
