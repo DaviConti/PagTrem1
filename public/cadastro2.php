@@ -20,45 +20,43 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         exit();
     }
 }
-
-echo '<!DOCTYPE html>';
-echo '<html lang="pt-BR">';
-echo '<head>';
-echo '  <meta charset="UTF-8">';
-echo '  <meta name="viewport" content="width=device-width, initial-scale=1.0">';
-echo '  <title>Cadastro - PagTrem</title>';
-echo '  <link rel="stylesheet" href="../style/cadastro2.css">';
-echo '</head>';
-echo '<body>';
-echo '  <div class="container">';
-echo '    <div class="top-logo">';
-echo '      <img src="https://img.icons8.com/ios-filled/50/train.png" alt="Trem">';
-echo '    </div>';
-echo '    <h2>Cadastro</h2>';
-echo '    <form id="cadastroForm" method="POST" action="">';
-echo '      <label for="nome">Nome:</label>';
-echo '      <input type="text" id="nome" name="nome" placeholder="Digite aqui..." value="' . htmlspecialchars($nome) . '" required>';
-echo '      <label for="nascimento">Data de nascimento:</label>';
-echo '      <input type="text" id="nascimento" name="nascimento" placeholder="dd / mm / aaaa" value="' . htmlspecialchars($nascimento) . '" required>';
-echo '      <div id="mensagemErro" class="erro">';
-if (!empty($erro)) {
-    echo $erro;
-}
-echo '      </div>';
-echo '      <button type="submit">Próximo</button>';
-echo '    </form>';
-echo '    <div class="indicadores">';
-echo '      <div class="ativo"></div>';
-echo '      <div></div>';
-echo '      <div></div>';
-echo '    </div>';
-echo '    <div class="navegacao">';
-echo '      <button>&larr;</button>';
-echo '      <button>&#8962;</button>';
-echo '      <button>&rarr;</button>';
-echo '    </div>';
-echo '  </div>';
-echo '  <script src="../script/script.js"></script>';
-echo '</body>';
-echo '</html>';
 ?>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - PagTrem</title>
+    <link rel="stylesheet" href="../style/cadastro2.css">
+</head>
+<body>
+    <div class="container">
+        <div class="top-logo">
+            <img src="https://img.icons8.com/ios-filled/50/train.png" alt="Trem">
+        </div>
+        <h2>Cadastro</h2>
+        <form id="cadastroForm" method="POST" action="">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite aqui..." value="<?php echo htmlspecialchars($nome); ?>" required>
+            <label for="nascimento">Data de nascimento:</label>
+            <input type="text" id="nascimento" name="nascimento" placeholder="dd / mm / aaaa" value="<?php echo htmlspecialchars($nascimento); ?>" required>
+            <div id="mensagemErro" class="erro">
+                <?php if (!empty($erro)) echo $erro; ?>
+            </div>
+            <button type="submit">Próximo</button>
+        </form>
+        <div class="indicadores">
+            <div class="ativo"></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="navegacao">
+            <button>&larr;</button>
+            <button>&#8962;</button>
+            <button>&rarr;</button>
+        </div>
+    </div>
+    <script src="../script/script.js"></script>
+</body>
+</html>
